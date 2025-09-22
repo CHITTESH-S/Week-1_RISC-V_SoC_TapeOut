@@ -5,7 +5,7 @@ This week, we focus on **Verilog RTL design, simulation using Icarus Verilog, wa
 
 ---
 
-## 🖥️ 1️⃣ Introduction and Simulation with Icarus Verilog (iveriog)
+## 🖥️ 1️⃣ Introduction and Simulation with Icarus Verilog (iverilog)
 
 Before implementing hardware, **simulation verifies RTL designs**.
 
