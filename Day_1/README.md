@@ -85,7 +85,7 @@ sky130RTLDesignAndSynthesisWorkshop/
 └── README.md
 ```
 
-![listing](..listing.png)
+![listing](listing.png)
 
 ## 🔹 3️⃣ Lab 1 – Multiplexer (MUX)
 
