@@ -191,6 +191,35 @@ show
 ```
 ---
 
+## ⚡ 6️⃣ Quick Reference Commands
 
+| Task              | Command                                 |
+| ----------------- | --------------------------------------- |
+| Compile RTL       | `iverilog -g2012 -o simv design.v tb.v` |
+| Run Simulation    | `vvp simv`                              |
+| View Waveforms    | `gtkwave tb.vcd`                        |
+| Start Yosys       | `yosys`                                 |
+| Read Library      | `read_liberty -lib path/to/lib.lib`     |
+| Synthesize RTL    | `synth -top module_name`                |
+| Map to Gates      | `abc -liberty path/to/lib.lib`          |
+| Generate Netlist  | `write_verilog netlist.v`               |
+| Visualize Netlist | `show`                                  |
 
+---
+
+## ✅ 7️⃣ Key Concepts Recap
+
+- RTL Design: Behavioral description using Verilog.
+
+- Testbench: Verifies RTL; no primary I/O.
+
+- Simulation: Icarus Verilog + GTKWave → waveform visualization.
+
+- Logic Synthesis: RTL → netlist using Yosys + .lib.
+
+- Standard Cells: Multiple flavors for timing, area, power optimization.
+
+- Cell Selection: Guided by timing constraints for optimal trade-offs.
+
+---
 
