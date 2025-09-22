@@ -1,6 +1,6 @@
-## 🌟 RISC-V SoC Tapeout – Week 1
+## 🌟 RISC-V SoC Tapeout – Day 1
 
-Welcome to **Week 1** of the RISC-V SoC Tapeout journey!  
+Welcome to **Day 1** of the RISC-V SoC Tapeout journey!
 This week, we focus on **Verilog RTL design, simulation using Icarus Verilog, waveform visualization with GTKWave, and logic synthesis using Yosys**.
 
 ---
