@@ -6,7 +6,7 @@ Here, we focus on **Introduction to dot lib, Hierarchical and flatten Synthesis 
 
 ---
 
-## 1️⃣ Introduction to .lib
+## 🖥️ 1️⃣ Introduction to .lib
 
 ### What is a `.lib` (Liberty) file?
 
@@ -55,7 +55,7 @@ A Liberty file is a text description of a standard cell library that contains: l
 
 ---
 
-## 2️⃣ Hierarchical vs Flat synthesis — tradeoffs
+## ⚡ 2️⃣ Hierarchical vs Flat synthesis — tradeoffs
 
 ## Hierarchical synthesis
 
@@ -104,6 +104,12 @@ So, the top-level module (`multiple_modules`) is composed of two submodules:
 - `sub_module1` → AND gate
 - `sub_module2` → OR gate
 
+<div align="center">
+
+<img width="1024" height="1024" alt="hier_and_flat" src="https://github.com/user-attachments/assets/0282418f-34c8-4c5f-b741-a9998839706e" />
+
+</div>
+
 **Sky130 library & models**
 
 * `lib/sky130_fd_sc_hd__tt_025C_1v80.lib` (Liberty)
@@ -126,6 +132,12 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show -prefix ../results/multiple_modules_hier
 write_verilog ../results/multiple_modules_hier.v
 ```
+
+<div align="center">
+
+<img width="1024" height="1024" alt="hier_show" src="https://github.com/user-attachments/assets/43a97a79-4665-4249-a467-fe7e61e329de" />
+
+</div>
 
 **Run:** `yosys -s scripts/synth_hier.ys`
 
@@ -157,6 +169,12 @@ show -prefix ../results/multiple_modules_flat
 write_verilog -noattr ../results/multiple_modules_flat.v
 ```
 
+<div align="center">
+
+<img width="1024" height="1024" alt="flat_show" src="https://github.com/user-attachments/assets/befb2472-f491-4fad-b304-e46fb69d0c5e" />
+
+</div>
+
 **Run:** `yosys -s scripts/synth_flat.ys`
 
 **Expected output:**
@@ -182,7 +200,35 @@ abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 show -prefix ../results/sub_module1
 write_verilog ../results/sub_module1_syn.v
 ```
-**Why:** Useful for IP reuse and hierarchical flows where multiple instances of the same block can share a synthesized implementation.
+<div align="center">
+
+<img width="1024" height="1024" alt="show_submodule1" src="https://github.com/user-attachments/assets/ae91bd97-7bc2-4f1e-9294-ec2d1ae1c6b2" />
+
+</div>
+
+**Objective:** Synthesize only a submodule (e.g. `sub_module2`) to generate a reusable gate‑level block.
+
+**Script `scripts/synth_submodule.ys`**
+
+```yosys
+read_liberty -lib ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog ../rtl/multiple_modules.v
+synth -top sub_module2
+abc -liberty ../lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show -prefix ../results/sub_module1
+write_verilog ../results/sub_module1_syn.v
+```
+<div align="center">
+
+<img width="1916" height="1075" alt="show_submodule2" src="https://github.com/user-attachments/assets/14d55258-5396-4c40-ad1e-8ea21b38a7f1" />
+
+</div>
+
+**Why:** 
+
+- Useful for IP reuse and hierarchical flows where multiple instances of the same block can share a synthesized implementation.
+
+- **Divide and Conquer** rule -> When the design is massive, module synthesis have been used to obtain good process.
 
 ---
 
