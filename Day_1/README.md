@@ -244,7 +244,7 @@ show
 
 | Task              | Command                                 |
 | ----------------- | --------------------------------------- |
-| Compile RTL       | `iverilog -g2012 -o simv design.v tb.v` |
+| Compile RTL       | `iverilog design.v tb.v` |
 | Run Simulation    | `vvp simv`                              |
 | View Waveforms    | `gtkwave tb.vcd`                        |
 | Start Yosys       | `yosys`                                 |
