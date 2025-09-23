@@ -1,7 +1,7 @@
 ## 🌟 RISC-V SoC Tapeout – Day 1
 
 Welcome to **Day 1** of the RISC-V SoC Tapeout journey!
-This week, we focus on **Verilog RTL design, simulation using Icarus Verilog, waveform visualization with GTKWave, and logic synthesis using Yosys**.
+Here,we focus on **Verilog RTL design, simulation using Icarus Verilog, waveform visualization with GTKWave, and logic synthesis using Yosys**.
 
 ---
 
