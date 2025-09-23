@@ -4,7 +4,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-## 🎯 Learning Objectives
+## 🎯 Day 1 - Learning Objectives
 
 - Write **synthesizable Verilog RTL** designs  
 - Verify designs using **Icarus Verilog** + **GTKWave**  
