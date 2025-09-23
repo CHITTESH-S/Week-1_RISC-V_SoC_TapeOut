@@ -1,4 +1,4 @@
-## 🌟 RISC-V SoC Tapeout – Day 1
+## 🌟 RISC-V SoC Tapeout – Week 1: Day 1
 
 Welcome to **Day 1** of the RISC-V SoC Tapeout journey!
 
