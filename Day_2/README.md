@@ -41,17 +41,17 @@ A Liberty file is a text description of a standard cell library that contains: l
 
 * `.v` files provide *functional/behavioral* or *structural* models for simulation (no timing unless annotated), while `.lib` gives the *timing/power/area* information used by synthesis and STA. Both must match logically.
 
-<div align="center">
-
-<img width="1024" height="1024" alt="cell" src="https://github.com/user-attachments/assets/d198f45a-ae4b-485a-853d-b2cc78821a42" />
-
-</div>
-
 ### Fast vs Slow cells — tradeoffs
 
 * Fast: lower delay, higher area and dynamic/leakage power.
 * Slow: higher delay, smaller area, lower power.
 * Use fast cells only in timing‑critical paths; use slow cells elsewhere.
+
+<div align="center">
+
+<img width="1024" height="1024" alt="cell" src="https://github.com/user-attachments/assets/d198f45a-ae4b-485a-853d-b2cc78821a42" />
+
+</div>
 
 ---
 
