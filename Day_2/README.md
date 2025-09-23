@@ -104,12 +104,6 @@ So, the top-level module (`multiple_modules`) is composed of two submodules:
 - `sub_module1` → AND gate
 - `sub_module2` → OR gate
 
-<div align="center">
-
-<img width="1024" height="1024" alt="hier_and_flat" src="https://github.com/user-attachments/assets/0282418f-34c8-4c5f-b741-a9998839706e" />
-
-</div>
-
 **Sky130 library & models**
 
 * `lib/sky130_fd_sc_hd__tt_025C_1v80.lib` (Liberty)
@@ -230,5 +224,14 @@ write_verilog ../results/sub_module1_syn.v
 
 - **Divide and Conquer** rule -> When the design is massive, module synthesis have been used to obtain good process.
 
+## 🧩 Hierarchical vs Flatten Synthesis Code
+
+<div align="center">
+
+<img width="1024" height="1024" alt="hier_and_flat" src="https://github.com/user-attachments/assets/0282418f-34c8-4c5f-b741-a9998839706e" />
+
+</div>
+
 ---
 
+## 🔹3️⃣ Various Flop Coding Styles and Optimization
