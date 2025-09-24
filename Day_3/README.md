@@ -6,6 +6,16 @@ Welcome to **Day 3** of the RISC-V SoC Tapeout journey!
 
 ---
 
+💡 We focus on three main areas:
+
+- ⚡ Combinational Logic Optimization – Simplify logic, propagate constants, reduce gates.
+
+- 🔁 Sequential Logic Optimization – Optimize FFs, retiming, state pruning.
+
+- 🗑 Unused Outputs Optimization – Remove redundant sequential nodes.
+
+---
+
 ## 🎯 Objectives
 
 ✅ Understand common combinational optimizations (Constant Propogation, Boolean Logic Optimization, etc).
@@ -29,7 +39,38 @@ assign z = b | 1'b1; // becomes z = 1'b1
 ```
 - ✅ Simplifies netlist and reduces area.
 
-### 2️⃣ Boolean Logic Optimization
+### 💻 Example: Constant Propagation
+
+```verilog
+module opt_check1(input a, input b, output y);
+  assign y = a ? b : 0;
+endmodule
+```
+
+<div align="center">
+
+
+
+</div>
+
+### 🖥 Yosys Commands
+
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check.v
+synth -top opt_check
+opt_clean -purge
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
+
+<div align="center">
+
+
+
+</div>
+
+### 2️⃣ Boolean Logic Optimization / K-Map Simplification
 - Apply Boolean algebra identities.
 - Example:
 ```verilog
@@ -37,11 +78,28 @@ assign y = a ? ( b ? c : ( c ? a : 0 ) ) : !c ) -> y = a ⊕ c
 ```
 ---
 
+<div align="center">
+
+
+
+</div>
+
 ## 🔁 Sequential Optimizations
 
 ### 1️⃣ Constant Propagation in Sequential Logic
 - Remove registers driven by constants.
 - Example: a flop that always loads `1’b0` can be pruned.
+
+### 💻 Example: Constant FF
+
+```verilog
+always @(posedge clk or posedge reset) begin
+    if(reset)
+        q <= 0;
+    else
+        q <= 1;
+end
+```
 
 ### 2️⃣ State Optimization
 - Reduce FSM state encoding.
@@ -54,5 +112,21 @@ assign y = a ? ( b ? c : ( c ? a : 0 ) ) : !c ) -> y = a ⊕ c
 ### 4️⃣ Retiming
 - Move registers across combinational paths.
 - ✅ Balances path delays, improves Fmax.
+
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog dff_const.v
+synth -top dff_const
+dfflibmap -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+
+```
+
+<div align="center">
+
+
+
+</div>
 
 ---
