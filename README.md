@@ -37,8 +37,8 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-✨ **Summary Insight**  
-Day-1 built the **foundation of RTL design, simulation, and synthesis**, introducing the role of testbenches, functional verification, and standard-cell libraries. It emphasized **timing-aware design** and understanding cell trade-offs, forming the basis for more advanced synthesis and timing optimization in subsequent days.
+>✨ **Summary Insight**  
+>Day-1 built the **foundation of RTL design, simulation, and synthesis**, introducing the role of testbenches, functional verification, and standard-cell libraries. It emphasized **timing-aware design** and understanding cell trade-offs, forming the basis for more advanced synthesis and timing optimization in subsequent days.
 
 ---
 
@@ -75,8 +75,8 @@ Day-1 built the **foundation of RTL design, simulation, and synthesis**, introdu
 
 ---
 
-✨ **Summary Insight**  
-Day-2 strengthened timing awareness by exploring **.lib files**, highlighted **hierarchical vs flat design trade-offs**, and deepened understanding of **flops + RTL optimizations**, paving the way toward efficient and reliable SoC designs.
+>✨ **Summary Insight**  
+>Day-2 strengthened timing awareness by exploring **.lib files**, highlighted **hierarchical vs flat design trade-offs**, and deepened understanding of **flops + RTL optimizations**, paving the way toward efficient and reliable SoC designs.
 
 ---
 
