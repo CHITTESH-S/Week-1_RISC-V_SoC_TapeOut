@@ -235,3 +235,94 @@ write_verilog ../results/sub_module1_syn.v
 ---
 
 ## 🔹3️⃣ Various Flop Coding Styles and Optimization
+
+## ❓ What Problem Do Flops Solve?
+
+Digital circuits can be divided into:
+- 🔄 **Combinational logic** → outputs depend only on current inputs.
+- 🗂️ **Sequential logic** → outputs depend on inputs *and* stored history.
+
+⚠️ Problem with combinational circuits → **glitches** (unwanted short pulses).
+
+### 🔍 Example
+Equation:  
+
+```
+y = (a · b) + c
+```
+
+- Inputs: `a`, `b`, `c`
+- Process: `a & b → net1`, then `net1 | c → y`
+
+⏳ Due to propagation delays:
+- OR gate may update faster,
+- AND gate may update slower,
+- Output `y` flips temporarily → **glitch**.
+
+---
+
+## ✅ Why Do We Need Flops?
+
+Flops = **stability + memory**
+
+- ⏱️ **Samples input only on a clock edge**
+- 🛑 **Holds value until next clock**
+- 🛡️ **Shields downstream logic from glitches**
+
+> 💡 Analogy: Flops are like 🚦 traffic lights —  
+> Inputs may arrive at different times, but updates happen **only when the clock says GO**.
+
+---
+
+## 🧩 Where Do Flops Fit?
+
+Typical structure:
+
+```
+[ Comb Logic ] → [ Flop ] → [ Comb Logic ] → [ Flop ] ...
+```
+
+- ❌ Without flops → glitches pass through.
+- ✅ With flops → stable pipeline stages.
+
+👉 This is the basis of **pipelining** in processors.
+
+---
+
+## 🎛️ Control Pins of Flops
+
+Flops need **defined initial states** at power-up.
+
+- 🔻 **Reset (Clear)** → force output = `0`
+- 🔺 **Set (Preset)** → force output = `1`
+
+Types of control:
+1. ⚡ **Asynchronous (Async)** → reacts immediately, ignores clock
+2. ⏱️ **Synchronous (Sync)** → reacts only on clock edge
+
+---
+
+## 🔄 Reset / Set Behavior
+
+| 🔧 Case          | 📌 Behavior                                   | ⏲️ Clock Dependence |
+|------------------|-----------------------------------------------|----------------------|
+| **Async Reset**  | Output goes low immediately                   | ❌ Independent       |
+| **Async Set**    | Output goes high immediately                  | ❌ Independent       |
+| **Sync Reset**   | Output goes low *only on clock edge*           | ✅ Waits for clock   |
+| **Sync + Async** | Some flops support both mechanisms            | ⚙️ Mixed             |
+
+---
+
+## 📝 Key Takeaways
+
+- ⚠️ **Glitches** → due to unequal propagation delays
+- ⏱️ **Flops** → store values, cut timing paths, prevent glitches
+- 🛡️ **Clock edge** → ensures safe state updates
+- 🔻 **Reset/Set** → define known startup conditions
+- ⚡ **Sync vs Async** → defines *when* reset/set takes effect
+
+---
+
+✨ **Final Insight:**  
+Flops = the **building blocks of synchronous design**.  
+They make circuits predictable, reliable, and scalable 🚀.
