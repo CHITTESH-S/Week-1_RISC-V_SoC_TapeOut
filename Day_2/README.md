@@ -300,6 +300,32 @@ Types of control:
 1. ⚡ **Asynchronous (Async)** → reacts immediately, ignores clock
 2. ⏱️ **Synchronous (Sync)** → reacts only on clock edge
 
+## 🔍 Examples:
+
+- **Asynchronous (async) Reset (res)**
+
+<div align="center">
+
+<img width="1024" height="1024" alt="async_res" src="https://github.com/user-attachments/assets/da62fd88-b024-4922-a796-43a4e52fa8b1" />
+
+</div>
+
+- **Asynchronous (async) Set (set)**
+
+<div align="center">
+
+<img width="1024" height="1024" alt="async_set" src="https://github.com/user-attachments/assets/a95b1036-4bcd-43df-8e62-c97a51186437" />
+
+</div>
+
+- **Synchronous (sync) Reset (res)**
+
+<div align="center">
+
+<img width="1024" height="1024" alt="sync_res" src="https://github.com/user-attachments/assets/4a429d3a-20ff-471d-ad01-23ec02669f9f" />
+
+</div>
+
 ---
 
 ## 🔄 Reset / Set Behavior
