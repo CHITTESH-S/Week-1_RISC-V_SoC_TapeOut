@@ -308,7 +308,7 @@ Types of control:
 |------------------|-----------------------------------------------|----------------------|
 | **Async Reset**  | Output goes low immediately                   | ❌ Independent       |
 | **Async Set**    | Output goes high immediately                  | ❌ Independent       |
-| **Sync Reset**   | Output goes low *only on clock edge*           | ✅ Waits for clock   |
+| **Sync Reset**   | Output goes low *only on clock edge*          | ✅ Waits for clock   |
 | **Sync + Async** | Some flops support both mechanisms            | ⚙️ Mixed             |
 
 ---
@@ -326,3 +326,86 @@ Types of control:
 ✨ **Final Insight:**  
 Flops = the **building blocks of synchronous design**.  
 They make circuits predictable, reliable, and scalable 🚀.
+
+---
+
+## ⚡ Interesting Optimization: Mult2 & Mult8 in Verilog
+
+### 🔍 Overview  
+
+When multiplying by powers of two (like 2, 4, 8, etc.), synthesis tools optimize the multiplication into **bit shifts** instead of using a multiplier.  
+
+- `a * 2` → `a << 1` (shift left by 1)  
+- `a * 8` → `a << 3` (shift left by 3)  
+
+This reduces hardware cost because:  
+✅ No multiplier circuit is required  
+✅ Only wiring/bit-shifting logic is used  
+✅ Faster and more resource-efficient  
+
+---
+
+## 🖥️ Verilog Example
+
+### Mult2 (×2)
+```verilog
+module mult2 (
+    input  wire [2:0] a,   // 3-bit input
+    output wire [3:0] y    // needs 4 bits (max 14)
+);
+    assign y = a << 1;     // optimized shift-left
+endmodule
+```
+
+### Mult8 (×8)
+```verilog
+module mult8 (
+    input  wire [2:0] a,   // 3-bit input
+    output wire [6:0] y    // needs 7 bits (max 56)
+);
+    assign y = a << 3;     // optimized shift-left
+endmodule
+```
+
+---
+
+## ⚙️ How It Works  
+
+- **Shift-left by 1 (×2):** Appends a `0` at the LSB, moving bits left.  
+  Example: `a=3'b101 (5)` → `y=4'b1010 (10)`  
+
+- **Shift-left by 3 (×8):** Appends three `0`s at the LSB.  
+  Example: `a=3'b101 (5)` → `y=7'b0101000 (40)`  
+
+---
+
+## 📊 Output Table  
+
+| a (bin) | a (dec) | a×2 (bin) | a×2 (dec) | a×8 (bin)   | a×8 (dec) |
+|---------|---------|-----------|-----------|-------------|-----------|
+| 000     | 0       | 0000      | 0         | 0000000     | 0         |
+| 001     | 1       | 0010      | 2         | 0001000     | 8         |
+| 010     | 2       | 0100      | 4         | 0010000     | 16        |
+| 011     | 3       | 0110      | 6         | 0011000     | 24        |
+| 100     | 4       | 1000      | 8         | 0100000     | 32        |
+| 101     | 5       | 1010      | 10        | 0101000     | 40        |
+| 110     | 6       | 1100      | 12        | 0110000     | 48        |
+| 111     | 7       | 1110      | 14        | 0111000     | 56        |
+
+---
+
+## 🚀 Key Takeaways  
+
+- Multiplication by powers of two is **just a shift**.  
+- Synthesizers replace `*2`, `*4`, `*8`, … with **shift-left operations**.  
+- This saves **area, power, and time**.  
+
+✨ Pro Tip: Always check synthesis reports to confirm whether the tool inferred a shift instead of a multiplier!  
+
+---
+
+<div align="center">
+
+## 🌟 End Of Day - 2 of RISC-V SoC Tapeout 
+
+</div>
