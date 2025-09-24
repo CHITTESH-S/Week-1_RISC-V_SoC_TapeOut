@@ -272,3 +272,9 @@ show
 - Cell Selection: Guided by timing constraints for optimal trade-offs.
 
 ---
+
+<div align="center">
+
+## 🌟 End Of Day - 1 of RISC-V SoC Tapeout 
+
+</div>
