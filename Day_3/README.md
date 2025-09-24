@@ -8,9 +8,9 @@ Welcome to **Day 3** of the RISC-V SoC Tapeout journey!
 
 ## 🎯 Objectives
 
-- ✅ Understand common combinational optimizations (Constant Propogation, Boolean Logic Optimization, etc).
-- ✅ Learn sequential optimizations: Constant Propogation, State Optimization, Sequential Logic Cloning, Retiming, etc.
-- ✅ Adopt Verilog coding patterns that are synthesis‑friendly and produce clean netlists.
-- ✅ Run Yosys flows to compare unoptimized vs optimized results and interpret `stat`/`show` outputs.
+✅ Understand common combinational optimizations (Constant Propogation, Boolean Logic Optimization, etc).
+✅ Learn sequential optimizations: Constant Propogation, State Optimization, Sequential Logic Cloning, Retiming, etc.
+✅ Adopt Verilog coding patterns that are synthesis‑friendly and produce clean netlists.
+✅ Run Yosys flows to compare unoptimized vs optimized results and interpret `stat`/`show` outputs.
 
 ---
