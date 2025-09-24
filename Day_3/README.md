@@ -42,16 +42,10 @@ assign z = b | 1'b1; // becomes z = 1'b1
 ### 💻 Example: Constant Propagation
 
 ```verilog
-module opt_check1(input a, input b, output y);
+module opt_check(input a, input b, output y);
   assign y = a ? b : 0;
 endmodule
 ```
-
-<div align="center">
-
-
-
-</div>
 
 ### 🖥 Yosys Commands
 
@@ -66,7 +60,7 @@ show
 
 <div align="center">
 
-
+<img width="1024" height="1024" alt="opt_check" src="https://github.com/user-attachments/assets/c09adbb5-fd1e-4681-ab17-56c920c7bb1c" />
 
 </div>
 
@@ -76,13 +70,25 @@ show
 ```verilog
 assign y = a ? ( b ? c : ( c ? a : 0 ) ) : !c ) -> y = a ⊕ c
 ```
----
+
+### 🖥 Yosys Commands
+
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+read_verilog opt_check2.v
+synth -top opt_check2
+opt_clean -purge
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+show
+```
 
 <div align="center">
 
-
+<img width="1024" height="1024" alt="opt_check2" src="https://github.com/user-attachments/assets/0aaf173d-5c98-4986-9d3d-3edf238b6393" />
 
 </div>
+
+---
 
 ## 🔁 Sequential Optimizations
 
@@ -100,6 +106,12 @@ always @(posedge clk or posedge reset) begin
         q <= 1;
 end
 ```
+
+<div align="center">
+
+<img width="1024" height="1024" alt="wave_const1" src="https://github.com/user-attachments/assets/ec7d79a4-b4c2-4c1b-ada8-0ba576d022b3" />
+
+</div>
 
 ### 2️⃣ State Optimization
 - Reduce FSM state encoding.
@@ -125,7 +137,7 @@ show
 
 <div align="center">
 
-
+<img width="1024" height="1024" alt="yosys_const1" src="https://github.com/user-attachments/assets/d5c1b20d-779a-4986-9b5c-d682b06273aa" />
 
 </div>
 
