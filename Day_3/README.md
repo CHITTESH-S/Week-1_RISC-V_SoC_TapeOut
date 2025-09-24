@@ -8,11 +8,11 @@ Welcome to **Day 3** of the RISC-V SoC Tapeout journey!
 
 💡 We focus on three main areas:
 
-- ⚡ Combinational Logic Optimization – Simplify logic, propagate constants, reduce gates.
+⚡  1. Combinational Logic Optimization – Simplify logic, propagate constants, reduce gates.
 
-- 🔁 Sequential Logic Optimization – Optimize FFs, retiming, state pruning.
+🔁 2. Sequential Logic Optimization – Optimize FFs, retiming, state pruning.
 
-- 🗑 Unused Outputs Optimization – Remove redundant sequential nodes.
+🗑 3. Unused Outputs Optimization – Remove redundant sequential nodes.
 
 ---
 
@@ -142,3 +142,75 @@ show
 </div>
 
 ---
+
+## 🗑 Section 3 – Unused Outputs Optimization
+
+### Why:
+
+- FF outputs or wires not used consume area & dynamic power.
+
+### Benefits:
+
+🏭 Reduces chip area
+
+⚡ Saves power
+
+🔍 Simplifies netlist readability
+
+### 💻 Example: Counter (Case - 1) 
+
+```verilog
+reg [2:0] count;
+assign q = count[0];
+
+always @(posedge clk or posedge reset) begin
+  if(reset)
+    count <= 3'b000;
+  else
+    count <= count + 1;
+end
+```
+
+<div align="center">
+
+<img width="1024" height="1024" alt="count_opt_case1" src="https://github.com/user-attachments/assets/5eb8dc40-3507-48ad-a9dc-ce0433997534" />
+
+</div>
+
+### 💻 Example: Counter (Case - 2)
+
+```verilog
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk or posedge reset) begin
+  if(reset)
+    count <= 3'b000;
+  else
+    count <= count + 1;
+end
+```
+
+<div align="center">
+
+<img width="1024" height="1024" alt="count_opt_case2" src="https://github.com/user-attachments/assets/47195a6d-6ca7-4522-8f5e-9027abc35a9e" />
+
+</div>
+
+---
+
+## ✅ Summary
+
+| Section           | Key Points                                                         |
+| ----------------- | ------------------------------------------------------------------ |
+| ⚡ Combinational   | Constant propagation, Boolean simplification, hierarchy flattening |
+| 🔁 Sequential     | Constant FF removal, retiming, cloning, FSM state optimization     |
+| 🗑 Unused Outputs | Remove unconnected FFs/wires to save area & power                  |
+
+---
+
+<div align="center">
+  
+🌟 End Of Day - 2 of RISC-V SoC Tapeout
+
+</div>
