@@ -137,7 +137,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-> ✨ **Summary Insight**
+> ✨ **Summary Insight**  
 > Day-4 emphasized the **bridge between RTL and hardware reality**. By running GLS, exploring blocking vs non-blocking, and debugging synthesis–simulation mismatches, we learned that **coding style directly dictates silicon correctness**. These practices are vital for reliable SoC design and avoiding late-stage surprises.  
 
 ---
