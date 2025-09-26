@@ -112,10 +112,12 @@ Each lab gives hands-on clarity.
 
 ### Example - 1: GLS and Synth-Simulation Mismatch
 
-**2:1 MUX (Ternary)**
+**Case 1 - 2:1 MUX (Ternary)**
 
 ```verilog
-assign y = sel ? i1 : i0;
+module ternary_operator_mux (input i0 , input i1 , input sel , output y);
+	assign y = sel?i1:i0;
+endmodule
 ```
 
 **iverilog & gtkwave for RTL MUX**
@@ -126,7 +128,7 @@ gtkwave tb_ternary_operator_mux.vcd
 ```
 <div align="center">
 
-
+<img width="1024" height="1024" alt="wave_ter_op_mux" src="https://github.com/user-attachments/assets/d31376af-0d9c-415d-a028-c5d187ce1052" />
 
 </div>
 
@@ -141,7 +143,7 @@ show
 ```
 <div align="center">
 
-
+<img width="1024" height="1024" alt="yosys_ter_op_mux" src="https://github.com/user-attachments/assets/f23e2dda-d132-4a58-9d62-b144f27468fe" />
 
 </div>
 
@@ -154,7 +156,61 @@ gtkwave tb_ternary_operator_mux.vcd
 
 <div align="center">
 
+<img width="1024" height="1024" alt="netlist_ter_op_mux" src="https://github.com/user-attachments/assets/1519b921-27b3-4f0e-a0ff-ec4b8e0160d1" />
 
+</div>
+
+**Case 2 - BAD MUX**
+
+```verilog
+module bad_mux (input i0 , input i1 , input sel , output reg y);
+always @ (sel)
+begin
+	if(sel)
+		y <= i1;
+	else 
+		y <= i0;
+end
+endmodule
+```
+
+**iverilog & gtkwave for RTL BAD MUX**
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v 
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+<div align="center">
+
+<img width="1024" height="1024" alt="wave_bad_mux" src="https://github.com/user-attachments/assets/f19dc1ef-5288-4119-91c7-34eae1320630" />
+
+</div>
+
+**Yosys**
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+write_verilog -noattr ternary_operator_mux_net.v
+show
+```
+<div align="center">
+
+<img width="1024" height="1024" alt="yosys_bad_mux" src="https://github.com/user-attachments/assets/7068bf58-baab-4565-b548-8c569e40759c" />
+
+</div>
+
+**iverilog & gtkwave for GLS BAD MUX**
+```verilog
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+<div align="center">
+
+<img width="1024" height="1024" alt="netlist_bad_mux" src="https://github.com/user-attachments/assets/3bfba2bd-122c-4a8a-ad04-9f48d235f073" />
 
 </div>
 
@@ -163,8 +219,14 @@ gtkwave tb_ternary_operator_mux.vcd
 ### Example - 2: Synth-Simulation Mismatch Blocking Caveat
 
 ```verilog
-d = x & c;  
-x = a | b;  
+module blocking_caveat (input a , input b , input  c, output reg d); 
+reg x;
+always @ (*)
+begin
+	d = x & c;
+	x = a | b;
+end
+endmodule  
 ```
 
 **iverilog & gtkwave for RTL Blocking Caveat**
@@ -176,7 +238,7 @@ gtkwave tb_blocking_caveat.vcd
 
 <div align="center">
 
-
+<img width="1024" height="1024" alt="wave_blocking" src="https://github.com/user-attachments/assets/cd39f425-80ab-4c7e-ab2e-67a99df073d0" />
 
 </div>
 
@@ -191,7 +253,7 @@ show
 ```
 <div align="center">
 
-
+<img width="1024" height="1024" alt="yosys_blocking" src="https://github.com/user-attachments/assets/93bf2e11-b794-4635-9848-90b70779617b" />
 
 </div>
 
@@ -203,7 +265,7 @@ gtkwave tb_blocking_caveat.vcd
 ```
 <div align="center">
 
-
+<img width="1024" height="1024" alt="netlist_blocking" src="https://github.com/user-attachments/assets/80ba8088-d355-4a26-b793-d8db3a43353c" />
 
 </div>
 
