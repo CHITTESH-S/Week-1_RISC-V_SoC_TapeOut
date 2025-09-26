@@ -229,7 +229,6 @@ show
 
 ```bash
 /home/chittesh/VLSI/
-└─ RTL_Design_and_Synth/
    └─ sky130RTLDesignAndSynthesisWorkshop/
     ├─ DC WORKSHOP
     ├─ my_lib/
