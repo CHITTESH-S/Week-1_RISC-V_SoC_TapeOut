@@ -228,8 +228,8 @@ show
 ## 📁 5️⃣ Lab Folder Structure
 
 ```bash
-/home/chittesh/vlsi/week_1/
-└─ rtl_design_and_synth/
+/home/chittesh/VLSI/
+└─ RTL_Design_and_Synth/
    └─ sky130RTLDesignAndSynthesisWorkshop/
     ├─ DC WORKSHOP
     ├─ my_lib/
