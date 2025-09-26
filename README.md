@@ -80,6 +80,35 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
+## 🎯 Day 3 – Learning Objectives  
+⚡ Master combinational logic optimizations (constant propagation, Boolean simplification)  
+🔁 Apply sequential optimizations (constant flops removal, retiming, register cloning, FSM pruning)  
+🗑 Prune unused outputs to save area, power, and complexity  
+⚙️ Use Yosys optimization flows (opt_clean, abc, dfflibmap) and compare netlist stats  
+
+---
+
+## 📒 Day 3 – Focus Areas  
+🧮 **Combinational**: constant folding, Boolean algebra optimizations, common subexpression elimination  
+🔂 **Sequential**: eliminate redundant flip-flops, retime pipelines, duplicate registers for critical paths  
+📉 **Unused Outputs**: remove signals/FFs that don’t impact functional outputs  
+🛠 **Yosys Flow Practice**: run baseline vs optimized flows, use `stat` and `show` to compare  
+
+---
+
+## 🧠 Key Learnings  
+📚 Optimizations at combinational and sequential levels reduce gate count, streamline logic, and boost performance  
+⚖️ Retiming and register cloning help meet timing at area cost tradeoffs  
+🗑 Removing unused logic is a “low-hanging fruit” for area/power savings  
+🔍 Using synthesis + optimization tools reveals how your RTL style impacts final netlist  
+
+---
+
+> ✨ **Summary Insight**  
+>On Day 3, we deepened our ability to **turn good RTL into better gate-level design**. By applying combinational and sequential optimizations and eliminating unused logic, you see firsthand how coding discipline + synthesis strategy directly affect area, timing, and power—crucial groundwork for clean, efficient RISC-V SoC tapeout.  
+
+---
+
 ## 🙌 Acknowledgements
 
 - Kunal Ghosh – VSD SoC Program
