@@ -72,7 +72,7 @@
 
 ---
 
-## ⚡ 3. Blocking vs. Non-Blocking
+## ⚡ 3. Blocking vs Non-Blocking
 
 > Verilog has two assignment styles, and choosing the right one prevents subtle bugs.
 
@@ -103,6 +103,97 @@ always @(posedge clk) q <= d;
 | Execution | Sequential, immediate | Concurrent, scheduled |
 | Use       | Combinational         | Sequential            |
 | Risk      | Wrong order bugs      | Mixed usage issues    |
+
+---
+
+## 🧪 4. Labs
+
+Each lab gives hands-on clarity.
+
+### Example - 1: GLS and Synth-Simulation Mismatch
+
+**2:1 MUX (Ternary)**
+
+```verilog
+assign y = sel ? i1 : i0;
+```
+
+**iverilog & gtkwave for RTL MUX**
+```
+iverilog ternary_operator_mux.v tb_ternary_operator_mux.v 
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+**Yosys**
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+read_verilog ternary_operator_mux.v
+synth -top ternary_operator_mux
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+write_verilog -noattr ternary_operator_mux_net.v
+show
+```
+
+**iverilog & gtkwave for GLS MUX**
+```verilog
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v ternary_operator_mux_net.v tb_ternary_operator_mux.v
+./a.out
+gtkwave tb_ternary_operator_mux.vcd
+```
+
+> **Problem:** missing sensitivity list + wrong assignment type.
+
+### Example - 2: Synth-Simulation Mismatch Blocking Caveat
+
+```verilog
+d = x & c;  
+x = a | b;  
+```
+
+**iverilog & gtkwave for RTL Blocking Caveat**
+```
+iverilog blocking_caveat.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+**Yosys**
+```yosys
+read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+read_verilog blocking_caveat.v
+synth -top blocking_caveat
+abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
+write_verilog -noattr blocking_caveat_net.v
+show
+```
+
+**iverilog & gtkwave for GLS Blocking Caveat**
+```verilog
+iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_sc_hd.v blocking_caveat_net.v tb_blocking_caveat.v
+./a.out
+gtkwave tb_blocking_caveat.vcd
+```
+
+---
+
+## 📌 5. Summary
+
+🔗 GLS = check correctness post-synthesis.
+
+⚠️ Mismatch = occurs from bad coding or non-synth constructs.
+
+⚡ Blocking vs Non-Blocking:
+
+- = → combinational
+- <= → sequential
+
+🧪 Labs show:
+
+- Correct MUX design.
+- Pitfalls (bad mux, blocking caveat).
+- GLS validation.
+
 
 
 
