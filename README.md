@@ -109,6 +109,39 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
+## 🎯 Day 4 – Learning Objectives
+🧩 Understand Gate-Level Simulation (GLS) and why it’s needed  
+⚡ Differentiate blocking (`=`) vs non-blocking (`<=`) assignments in Verilog  
+⚠️ Identify and prevent synthesis–simulation mismatches  
+🧪 Validate RTL vs synthesized netlist behavior through labs  
+
+---
+
+## 📒 Day 4 – Focus Areas
+🏗️ **GLS Flow**: RTL → Synthesized Netlist → iverilog → VCD → GTKWave  
+🔍 **Mismatch Pitfalls**: non-synth constructs, bad sensitivity lists, wrong assignment usage  
+⚡ **Blocking vs Non-Blocking**: coding style → determines correctness of hardware mapping  
+🧪 **Hands-On**: MUX examples, blocking caveats, and mismatch debugging  
+
+---
+
+## 🧠 Key Learnings
+📚 GLS ensures synthesis preserved functionality and timing  
+⚠️ Common mismatch sources:  
+- Missing `@(*)` → latch inference  
+- Using `initial` / `#delay` → not synthesizable  
+- Mixed blocking/non-blocking → simulation vs hardware misalignments  
+⚖️ Correct coding discipline = fewer surprises at GLS  
+🔁 Blocking → sequential execution, good for **combinational** logic  
+⏳ Non-blocking → concurrent scheduling, good for **sequential** logic  
+
+---
+
+> ✨ **Summary Insight**
+> Day-4 emphasized the **bridge between RTL and hardware reality**. By running GLS, exploring blocking vs non-blocking, and debugging synthesis–simulation mismatches, we learned that **coding style directly dictates silicon correctness**. These practices are vital for reliable SoC design and avoiding late-stage surprises.  
+
+---
+
 ## 🙌 Acknowledgements
 
 - Kunal Ghosh – VSD SoC Program
