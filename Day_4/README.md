@@ -240,3 +240,8 @@ gtkwave tb_blocking_caveat.vcd
 
 ---
 
+<div align="center">
+
+## 🌟 End Of Day - 4 of RISC-V SoC Tapeout 
+
+</div>
