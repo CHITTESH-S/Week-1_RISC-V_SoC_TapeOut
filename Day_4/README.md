@@ -124,6 +124,11 @@ iverilog ternary_operator_mux.v tb_ternary_operator_mux.v
 ./a.out
 gtkwave tb_ternary_operator_mux.vcd
 ```
+<div align="center">
+
+
+
+</div>
 
 **Yosys**
 ```yosys
@@ -134,6 +139,11 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog -noattr ternary_operator_mux_net.v
 show
 ```
+<div align="center">
+
+
+
+</div>
 
 **iverilog & gtkwave for GLS MUX**
 ```verilog
@@ -141,6 +151,12 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 ./a.out
 gtkwave tb_ternary_operator_mux.vcd
 ```
+
+<div align="center">
+
+
+
+</div>
 
 > **Problem:** missing sensitivity list + wrong assignment type.
 
@@ -158,6 +174,12 @@ iverilog blocking_caveat.v tb_blocking_caveat.v
 gtkwave tb_blocking_caveat.vcd
 ```
 
+<div align="center">
+
+
+
+</div>
+
 **Yosys**
 ```yosys
 read_liberty -lib ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib 
@@ -167,6 +189,11 @@ abc -liberty ../my_lib/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
 write_verilog -noattr blocking_caveat_net.v
 show
 ```
+<div align="center">
+
+
+
+</div>
 
 **iverilog & gtkwave for GLS Blocking Caveat**
 ```verilog
@@ -174,6 +201,11 @@ iverilog ../my_lib/verilog_model/primitives.v ../my_lib/verilog_model/sky130_fd_
 ./a.out
 gtkwave tb_blocking_caveat.vcd
 ```
+<div align="center">
+
+
+
+</div>
 
 ---
 
@@ -194,8 +226,17 @@ gtkwave tb_blocking_caveat.vcd
 - Pitfalls (bad mux, blocking caveat).
 - GLS validation.
 
+---
 
+## 🎯 Final Checklist for Designers
 
+✅ Use non-blocking in clocked always blocks.
 
+✅ Use blocking in combinational blocks.
 
+✅ Always include all signals in sensitivity list (@(*)).
+
+✅ Run both RTL sim & GLS sim.
+
+---
 
