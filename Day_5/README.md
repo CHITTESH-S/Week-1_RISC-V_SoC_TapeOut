@@ -510,17 +510,27 @@ endmodule
 
 ### 🎯 Key Synthesis Insights
 
-The journey through Day 5 reveals fundamental truths about hardware design:
+🔎 The journey through Day 5 reveals fundamental truths about hardware design:
 
-**Verilog is a hardware description language** - every construct has direct hardware implications. Understanding these implications is crucial for creating efficient, reliable digital systems.
+📝 Verilog = Hardware Description
+- Every construct maps to hardware → understanding implications ensures efficient & reliable designs.
 
-**Synthesis tools are powerful but not magical** - they faithfully implement what we describe, including our mistakes. Incomplete specifications lead to unwanted hardware inference.
+⚡ Synthesis Tools = Faithful Translators
+- They implement exactly what you write (including mistakes).
+- Incomplete specs → unwanted hardware inference.
 
-**Good RTL coding practices prevent most synthesis issues** - complete conditional coverage, explicit default cases, and appropriate construct selection eliminate the majority of synthesis problems.
+✅ Good RTL Coding = Fewer Issues
 
-**Verification must span multiple levels** - RTL simulation alone is insufficient. Synthesis verification and gate-level simulation are essential for catching mismatches and ensuring proper hardware implementation.
+- Cover all conditions
+- Use explicit default in case
+- Pick constructs wisely → Prevents most synthesis problems.
 
-The mastery of synthesis optimization represents a crucial milestone in digital design proficiency, enabling the creation of robust, efficient hardware implementations from high-level behavioral descriptions.
+🔍 Verification Beyond RTL
+- RTL simulation alone ≠ enough.
+- Must include synthesis verification + GLS to catch mismatches.
+
+🏆 Mastery of Synthesis Optimization
+Key milestone in digital design → enables creation of robust, optimized hardware from high-level descriptions.
 
 ---
 
