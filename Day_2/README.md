@@ -1,4 +1,4 @@
-## 🌟 RISC-V SoC Tapeout – Week 1: Day 2 (Timing Libraries, Synthesis Approaches & Flip-Flop Coding Styles)
+# 🌟 RISC-V SoC Tapeout – Week 1: Day 2 (Timing Libraries, Synthesis Approaches & Flip-Flop Coding Styles)
 
 Welcome to **Day 2** of the RISC-V SoC Tapeout journey!
 
