@@ -1,10 +1,10 @@
-## 🌟 RISC-V SoC Tapeout – Week-1: RTL Design Logic and Sysnthesis Using Sky130 PDK's
+# 🌟 RISC-V SoC Tapeout – Week-1: RTL Design Logic and Sysnthesis Using Sky130 PDK's
 
 This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on **Verilog RTL design, simulation, waveform visualization, and logic synthesis**.
 
 ---
 
-# 🎯 Day 1 – Learning Objectives
+## 🎯 Day 1 – Learning Objectives
 - 📝 Write **synthesizable Verilog RTL designs**  
 - 🧪 Verify designs using **Icarus Verilog + GTKWave**  
 - 🏗️ Understand **testbench structure** and simulation workflow  
@@ -13,7 +13,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-# 📒 Day 1 – Focus Areas
+## 📒 Day 1 – Focus Areas
 - 💻 **Introduction to Verilog RTL**: role in digital systems  
 - 🖥️ **Simulation workflow**: Icarus Verilog for simulation, GTKWave for waveform visualization  
 - 🧩 **Testbench components**:  
@@ -25,7 +25,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-# 🧠 Key Learnings
+## 🧠 Key Learnings
 - 🖊️ **RTL Design** describes circuits at the register and logic level and is synthesizable  
 - 🧪 **Simulation** ensures correct design behavior before hardware implementation  
 - 📦 **Testbenches**: no primary inputs/outputs, drive and observe the design internally  
@@ -42,7 +42,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-# 🎯 Day 2 – Learning Objectives
+## 🎯 Day 2 – Learning Objectives
 - 📂 Understand the role and structure of **Liberty (.lib) timing libraries**  
 - 🔄 Compare **hierarchical vs flat synthesis** flows using Yosys + Sky130 PDK  
 - 🧩 Practice **submodule synthesis** for IP reuse  
@@ -51,7 +51,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-# 📒 Day 2 – Focus Areas
+## 📒 Day 2 – Focus Areas
 - 📘 **Liberty (.lib) basics**: timing arcs, setup/hold, clk→Q, leakage/dynamic power, area, PVT corners  
 - 🏗️ **Hierarchical synthesis**: preserve module boundaries → IP reuse, faster incremental builds  
 - 🏭 **Flat synthesis**: global optimization → better timing/area at cost of readability  
@@ -61,7 +61,7 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-# 🧠 Key Learnings
+## 🧠 Key Learnings
 - 📚 `.lib` = the *timing/power/area truth* for synthesis/STA; `.v` = functional model  
 - 🌡️ PVT corners + multiple drive strengths → trade speed vs power/area  
 - ⚖️ **Hier vs Flat**:  
