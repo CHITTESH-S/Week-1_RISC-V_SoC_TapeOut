@@ -75,7 +75,7 @@ chittesh@msd-76:-/vlsi/week_1/rtl_design_and_synth/sky130RTLDesignAndSynthesisWo
 ```
 <div align="center">
 
-<img width="786" height="533" alt="mkdir_and_Cloning" src="https://github.com/user-attachments/assets/8a5694b9-45f0-43da-90a6-90d4e791dad0" />
+<img width="1024" height="1024" alt="mkdir_and_Cloning" src="https://github.com/user-attachments/assets/8a5694b9-45f0-43da-90a6-90d4e791dad0" />
 
 </div>
 
@@ -103,7 +103,7 @@ sky130RTLDesignAndSynthesisWorkshop/
 
 <div align="center">
 
-<img width="1221" height="860" alt="design_and_tb" src="https://github.com/user-attachments/assets/5aa1fb42-4e79-4618-97e0-0c83611225a4" />
+<img width="1024" height="1024" alt="design_and_tb" src="https://github.com/user-attachments/assets/5aa1fb42-4e79-4618-97e0-0c83611225a4" />
 
 </div>
 
@@ -118,7 +118,7 @@ gtkwave tb_good_mux.vcd
 ```
 <div align="center">
 
-<img width="1917" height="983" alt="gtkwave" src="https://github.com/user-attachments/assets/e56767f2-ca2c-478e-9225-b70ea764ed25" />
+<img width="1024" height="1024" alt="gtkwave" src="https://github.com/user-attachments/assets/e56767f2-ca2c-478e-9225-b70ea764ed25" />
 
 </div>
 
@@ -178,7 +178,7 @@ THOLD_B < TCQ_A + TCOMBI            → hold time check
 
 <div align="center">
 
-<img width="1920" height="1053" alt="yosys" src="https://github.com/user-attachments/assets/7b77bc7a-5ed7-4f7c-8cc6-abc0bf4f9dd0" />
+<img width="1024" height="1024" alt="yosys" src="https://github.com/user-attachments/assets/7b77bc7a-5ed7-4f7c-8cc6-abc0bf4f9dd0" />
 
 </div>
 
@@ -195,7 +195,7 @@ show
 
 <div align="center">
 
-<img width="1920" height="1060" alt="synth_rtl" src="https://github.com/user-attachments/assets/808c49cd-a038-4b48-b086-7523b2b82b90" />
+<img width="1024" height="1024" alt="synth_rtl" src="https://github.com/user-attachments/assets/808c49cd-a038-4b48-b086-7523b2b82b90" />
 
 </div>
 
@@ -203,7 +203,7 @@ show
 
 <div align="center">
 
-<img width="1920" height="1053" alt="abc" src="https://github.com/user-attachments/assets/e79f0640-a06f-4218-a4f6-bf812303994a" />
+<img width="1024" height="1024" alt="abc" src="https://github.com/user-attachments/assets/e79f0640-a06f-4218-a4f6-bf812303994a" />
 
 </div>
 
@@ -211,7 +211,7 @@ show
 
 <div align="center">
 
-<img width="1920" height="1053" alt="write_out_netlist" src="https://github.com/user-attachments/assets/a6d96d0a-8c58-4818-9ce9-e75196dfd7cc" />
+<img width="1024" height="1024" alt="write_out_netlist" src="https://github.com/user-attachments/assets/a6d96d0a-8c58-4818-9ce9-e75196dfd7cc" />
 
 </div>
 
@@ -219,7 +219,7 @@ show
 
 <div align="center">
 
-<img width="1917" height="1075" alt="post_abc (show)" src="https://github.com/user-attachments/assets/1aab731b-ca5d-449b-873c-746bd75f5f63" />
+<img width="1024" height="1024" alt="post_abc (show)" src="https://github.com/user-attachments/assets/1aab731b-ca5d-449b-873c-746bd75f5f63" />
 
 </div>
 
