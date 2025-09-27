@@ -142,6 +142,38 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
+## 🎯 Day 5 – Learning Objectives
+🔎 Understand how common Verilog constructs map to hardware after synthesis  
+⚡ Identify pitfalls that cause unintended latches or inefficient logic  
+✅ Learn synthesis-friendly `if/else` and `case` coding patterns  
+🔁 Distinguish procedural `for` (unrolled behavior) vs `generate` (structural replication)  
+🛡️ Apply techniques that avoid synthesis–simulation mismatches and produce predictable nets  
+
+---
+
+## 📒 Day 5 – Focus Areas
+🔀 **If / else**: priority logic vs complete combinational specification — how missing `else` causes latch inference  
+🎚️ **Case statements**: parallel mux-like selection, need `default` and full coverage; beware overlaps & partial assignments  
+🔁 **Looping constructs**: `for` inside `always` ⇒ behavioral unrolling; `generate` ⇒ replicated instances (scalable structural design)  
+🧪 **Labs**: incomplete-if, incomplete-case, overlapping-case, blocking-assignment caveat, generate vs procedural loop comparisons  
+⚙️ **Synthesis mapping**: inspect netlist (`show`), use `stat` and `abc/dfflibmap` to observe hardware translation
+
+---
+
+## 🧠 Key Learnings
+📝 Every Verilog construct implies real hardware — write with hardware intent in mind  
+⚠️ Incomplete combinational specifications produce latches (unwanted state) — always assign outputs on every branch or use `default`  
+📊 Case statements synthesize into clean multiplexers when fully specified; overlapping/wildcard cases are ambiguous and risky  
+🔁 Procedural `for` loops are unrolled — leads to wide combinational logic; `generate` creates reusable structural instances and is preferable for parameterized hardware  
+🔍 Good RTL practices (complete branches, consistent assignments, clear reset semantics) drastically reduce synthesis surprises and ease verification
+
+---
+
+> ✨ **Summary Insight**  
+> Day-5 reinforced the core truth: **Verilog is a hardware description language**, and synthesis tools faithfully implement what you write — including mistakes. Mastering `if`/`case` patterns, understanding loop semantics, and using structural `generate` constructs lead to predictable, efficient hardware. These practices are essential to avoid late-stage issues and produce clean, tapeout-ready netlists.
+
+---
+
 ## 🙌 Acknowledgements
 
 - Kunal Ghosh – VSD SoC Program
