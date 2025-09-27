@@ -1,4 +1,4 @@
-## 🌟 RISC-V SoC Tapeout – Week 1: Day 5 (Optimization in Synthesis)
+# 🌟 RISC-V SoC Tapeout – Week 1: Day 5 (Optimization in Synthesis)
 
 > 🔎 **Understanding how Verilog constructs translate to hardware and the critical role of synthesis optimization in digital design**
 
