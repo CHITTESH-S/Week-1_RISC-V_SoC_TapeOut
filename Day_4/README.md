@@ -1,4 +1,4 @@
-## 🌟 RISC-V SoC Tapeout – Week 1: Day 4 (GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch)
+# 🌟 RISC-V SoC Tapeout – Week 1: Day 4 (GLS, Blocking vs Non-Blocking and Synthesis-Simulation Mismatch)
 
 ### 🌟 Topics of the Day:
 
