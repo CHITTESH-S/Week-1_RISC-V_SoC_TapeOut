@@ -1,4 +1,4 @@
-## 🌟 RISC-V SoC Tapeout – Week 1: Day 1 (Introduction to Verilog RTL Design and Synthesis)
+# 🌟 RISC-V SoC Tapeout – Week 1: Day 1 (Introduction to Verilog RTL Design and Synthesis)
 
 Welcome to **Day 1** of the RISC-V SoC Tapeout journey!
 
