@@ -174,17 +174,36 @@ This repository covers **Week 1** of the RISC-V SoC Tapeout journey, focusing on
 
 ---
 
-## 🙌 Acknowledgements
+## 🙌 Acknowledgements  
 
-- Kunal Ghosh – VSD SoC Program
-- Open-source tools
-  
+👨‍🏫 **Kunal Ghosh** – VSD SoC Program Mentor  
+
+🧑‍🤝‍🧑 **Open-source EDA Community** – Tool contributors & maintainers  
+
+🌍 **RISC-V & Efabless Ecosystem** – Enabling open tapeout programs  
+
 ---
+
+## 🔗 References & Resources
+
+💡 I sincerely thank all the organizations and their key members for making this program possible:
+
+- 🧑‍🏫 **VLSI System Design (VSD)** – [Kunal Ghosh](https://www.linkedin.com/in/kunal-ghosh-vlsisystemdesign-com-28084836/) for mentorship and vision.
+- 🤝 **Efabless** – [Michael Wishart](https://www.linkedin.com/in/mike-wishart-81480612/) & [Mohamed Kassem](https://www.linkedin.com/in/mkkassem/) for enabling collaborative open-source chip design.
+- 🏭 [**Semiconductor Laboratory (SCL)**](https://www.scl.gov.in/) – for PDK & foundry support.
+- 🎓 [**IIT Gandhinagar (IITGN)**](https://www.linkedin.com/school/indian-institute-of-technology-gandhinagar-iitgn-/?originalSubdomain=in) – for on-site training & project facilitation.
+- 🛠️ **Synopsys** – [Sassine Ghazi](https://www.linkedin.com/in/sassine-ghazi/) for providing industry-grade EDA tools under C2S program.
+
+---
+
+## 🔗 Repository Links  
 
 👉 **Week-0 Repository Link:** https://github.com/CHITTESH-S/Week-0_RISC-V_SoC_TapeOut
 
-👉 **Week-1 Repository Link:** https://github.com/CHITTESH-S/Week-1_RISC-V_SoC_TapeOut
+👉 **Week-2 Repository Link:** https://github.com/CHITTESH-S/Week-2_RISC-V_SoC_TapeOut
 
 👉 **Main Repository Link:** https://github.com/CHITTESH-S/RISC-V_SoC_TapeOut_VSD
 
-👨‍💻 **Contributor:** Chittesh S
+👨‍💻 **Contributor**: [Chittesh S](https://github.com/CHITTESH-S)  
+
+---
